@@ -1,0 +1,99 @@
+
+option[value=color_1], .color_1 {
+	background: #ffffff;
+}
+option[value=color_2], .color_2 {
+	background: #ffeff1;
+}
+option[value=color_3], .color_3 {
+	background: #ffdfba;
+}
+option[value=color_4], .color_4 {
+	background: #ffffea;
+}
+option[value=color_5], .color_5 {
+	background: #dcffe4;
+}
+option[value=color_6], .color_6 {
+	background: #bae1ff;
+}
+li{
+	display: -webkit-box !important;
+	display: -webkit-flex !important;
+	display: -ms-flexbox !important;
+	display: flex !important;
+}
+li div:first-child {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+}
+.category{
+	margin-top:10px;
+}
+.category span{
+	padding: 2px 5px;
+    background: #cccccc;
+    text-align: center;
+    margin-right: 5px;
+    -webkit-border-radius: 3px;
+            border-radius: 3px;
+}
+.glyphicon{
+	color:#000;
+	margin-left: 5px;
+}
+.checked {
+	opacity: 0.5;
+}
+.file_upload {
+  position: relative;
+  overflow: hidden;
+  background: #eee;
+  border: 1px solid #ccc;
+  font-size: 30px;
+  line-height: 1;
+  text-align: center;
+  padding: 10px 40px 10px 25px;
+  width: 40px;
+}
+ 
+.file_upload input[type=file] {
+  position: absolute;
+  top: 0; right: 0;
+  font-size: 200px;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  cursor: pointer;
+}
+.imagesUser{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+}
+.collection img{
+	margin: 10px;
+}

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html ng-app="notesApp">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <title>Заметки</title>
+</head>
+<body ng-controller="notesController">
+<div class="page-header">
+    <h1 class="text-center">Заметки</h1>
+</div>
+<div class="container">
+    <form name="frm" ng-submit="addNote()">
+        <div class="form-group">
+            <input type="text" name="newNote" ng-model="newNoteTitle" ng-value="editTitle" class="form-control"
+                   placeholder="Название заметки"/>
+        </div>
+        <div class="form-group">
+            <textarea type="text" name="newNote" ng-model="newNoteText" class="form-control" placeholder="Текст заметки"
+                      rows="3" ng-value="editText" required></textarea>
+        </div>
+        <div class="form-group">
+            <select ng-model="colorNote" class="form-control" ng-value="editColor">
+                <option value="color_1">color_1</option>
+                <option value="color_2">color_2</option>
+                <option value="color_3">color_3</option>
+                <option value="color_4">color_4</option>
+                <option value="color_5">color_5</option>
+                <option value="color_6">color_6</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <input type="text" name="newCategory" class="form-control" placeholder="Категория" ng-model="newCategory"
+                   ng-value="editCategory"/></div>
+        <div class="collection">
+            <img ng-repeat="img in photos" ng-src="{{img}}" width="32" ng-click="checkImg($event)" alt="">
+
+        </div>
+        <div class="form-group file_upload">+
+            <input type="file" name="" accept="image/*" class="form-control" id="userFile" ng-model="userFile"
+                   onchange="angular.element(this).scope().checkFileSelect()">
+        </div>
+        <div class="form-group">
+            <button ng-disabled="frm.$invalid" class="btn btn-default">Добавить</button>
+        </div>
+    </form>
+    <div id="outside"></div>
+    <ul class="list-group">
+        <li ng-repeat="note in notes" class="list-group-item {{note.colorNote}} row">
+            <div class="col-md-1 imagesUser">
+                <img ng-src="{{image}}" class="img-responsive" ng-repeat="image in note.images" alt="">
+            </div>
+            <div class="col-md-10">
+                <h4>{{note.title}}</h4>
+                <span>{{note.text}}</span>
+                <div class="category">
+					<span ng-repeat="cat in note.categories" class="category">
+					{{cat}}
+					</span>
+                </div>
+            </div>
+            <div class="col-md-1">
+                <div class="pull-right">
+                    <a href="" ng-click="editNote($index)"><span class="glyphicon glyphicon-pencil"></span></a>
+                    <a href="" ng-click="removeNote($index)"><span class="glyphicon glyphicon-remove"></span></a>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.10/ngStorage.min.js"></script>
+<script type="text/javascript">
+    angular.module("notesApp", ['ngStorage']);
+</script>
+<script src="js/app.js"></script>
+</body>
+</html>
